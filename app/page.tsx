@@ -151,7 +151,8 @@ export default function Home() {
               <video 
                 autoPlay 
                 muted 
-                loop 
+                loop
+                playsInline
                 className="inset-0 w-full h-full object-cover"
                 poster="/poster.jpg"
               >
