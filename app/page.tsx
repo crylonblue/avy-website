@@ -47,6 +47,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-8 relative">
+      <div className="h-[80px] w-full bg-[url('/logo.png')] bg-contain bg-center bg-no-repeat mb-12 block md:hidden"></div>
       <div className="absolute inset-0 -z-10">
         <Image
           src="/bg.png"
@@ -56,10 +57,10 @@ export default function Home() {
           priority
         />
       </div>
-      <main className="w-full max-w-[950px] mx-auto px-4 flex gap-8 items-center">
+      <main className="w-full max-w-[950px] mx-auto px-4 flex-col-reverse flex md:flex-row gap-8 items-center mb-24 md:mb-0">
         <div className="flex-1 flex flex-col">
-          <div className="h-[100px] w-full bg-[url('/logo.png')] bg-contain bg-[left_top] bg-no-repeat mb-12"></div>
-          <h1 className="text-4xl font-bold text-white mb-8">Scan. Tap. Trade. iOS-Native.</h1>
+          <div className="h-[100px] w-full bg-[url('/logo.png')] bg-contain bg-[left_top] bg-no-repeat mb-12 hidden md:block"></div>
+          <h1 className="text-4xl font-bold text-white mb-8 mt-8 md:mt-0">Scan. Tap. Trade. iOS-Native.</h1>
           <p className="text-muted-foreground mb-8 max-w-[500px]">
           Start trading instantly. No KYC. No email. No barriers. Powered by Hyperliquid technology. Operated independently.
           </p>
@@ -153,13 +154,16 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="absolute bottom-8 px-8 w-full max-w-[950px] flex justify-between items-center">
-        <a
-          href="/privacy"
-          className="text-neutral-400 hover:text-white text-sm"
-        >
-          Privacy Policy
-        </a>
+      <footer className="absolute bottom-8 w-full flex justify-center items-center text-center">
+        <div className="max-w-[950px] px-4 w-full">
+          <a
+            href="/privacy"
+            className="text-neutral-400 hover:text-white text-sm"
+          >
+            Privacy Policy
+          </a>
+        </div>
+        
       </footer>
     </div>
   );
