@@ -46,7 +46,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-8 relative">
+    <div className="min-h-screen flex flex-col items-center justify-center p-8 relative bg-black">
       <div className="absolute inset-0 -z-10">
         <Image
           src="/bg.png"
@@ -108,7 +108,7 @@ export default function Home() {
             <div className="border-neutral-800 border mt-8 mb-8"></div>
             <div className="flex space-x-6">
               <a
-                href="https://twitter.com"
+                href="https://x.com/avytrade"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-neutral-400 hover:text-white"

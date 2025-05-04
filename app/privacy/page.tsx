@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-8 relative">
+    <div className="min-h-screen flex flex-col items-center justify-center p-8 relative bg-black">
       <div className="absolute inset-0 -z-10">
         <Image
           src="/bg.png"
