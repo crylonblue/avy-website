@@ -148,7 +148,16 @@ export default function Home() {
           <div className="aspect-[444/912] h-full min-w-[300px]">
             <div className="relative w-full h-full bg-[url('/mockup.png')] bg-contain bg-center bg-no-repeat z-10" />
             <div className="absolute inset-0 z-0 rounded-[15%] overflow-hidden p-4">
-              <video src="/screen.mp4" autoPlay muted loop className="inset-0 w-full h-full object-cover" />
+              <video 
+                autoPlay 
+                muted 
+                loop 
+                className="inset-0 w-full h-full object-cover"
+                poster="/poster.jpg"
+              >
+                <source src="/screen.webm" type="video/webm" />
+                <source src="/screen.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
