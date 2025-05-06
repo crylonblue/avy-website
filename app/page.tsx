@@ -136,7 +136,7 @@ export default function Home() {
         <div className="relative flex justify-end">
           <div className="aspect-[444/912] md:h-full md:min-w-[300px] h-[400px]">
             <div className="relative w-full h-full bg-[url('/mockup.png')] bg-contain bg-center bg-no-repeat z-10" />
-            <div className="absolute inset-0 z-0 rounded-[15%] overflow-hidden p-4">
+            <div className="absolute inset-0 z-0 rounded-[15%] overflow-hidden md:p-4 p-2">
               <video 
                 autoPlay 
                 muted 
