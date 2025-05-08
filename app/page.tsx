@@ -5,41 +5,32 @@ import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 
 export default function Home() {
-  const [email, setEmail] = useState("");
-  const [isValidEmail, setIsValidEmail] = useState(false);
+  const [twitter, setTwitter] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const validateEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newEmail = e.target.value;
-    setEmail(newEmail);
-    setIsValidEmail(validateEmail(newEmail));
+  const handleTwitterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newTwitter = e.target.value;
+    setTwitter(newTwitter);
     setError(null);
   };
 
   const handleSubmit = async () => {
-    if (!isValidEmail) return;
-    
     setIsSubmitting(true);
     setError(null);
 
     try {
       const { error } = await supabase
         .from('waitlist')
-        .insert([{ email }]);
+        .insert([{ twitter }]);
 
       if (error) throw error;
       
       setIsSubmitted(true);
     } catch (error) {
-      console.error('Error submitting email:', error);
-      setError('Failed to submit email. Please try again.');
+      console.error('Error submitting twitter handle:', error);
+      setError('Failed to submit twitter handle. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -62,27 +53,27 @@ export default function Home() {
           <div className="h-[100px] w-full bg-[url('/logo.png')] bg-contain bg-[left_top] bg-no-repeat mb-12 hidden md:block"></div>
           <h1 className="text-4xl font-bold text-white mb-8 mt-8 md:mt-0">Scan. Tap. Trade. iOS-Native.</h1>
           <p className="text-muted-foreground mb-8 max-w-[500px]">
-          Start trading instantly. No KYC. No email. No barriers. Powered by Hyperliquid technology. Operated independently.
+            Start trading instantly. No KYC. No email. No barriers. Powered by Hyperliquid technology. Operated independently.
           </p>
           <p className="text-muted-foreground mb-8 max-w-[500px]">
-            We are launching to family & friends soon. Be one of them and get early access.
+            Be one of the first 100 traders ever to touch Avy. We’ll never forget our earliest degens. (We'll never ask for your email)
           </p>
           <div className="max-w-[500px]">
             {!isSubmitted ? (
               <div className="flex gap-4">
                 <input 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  value={email}
-                  onChange={handleEmailChange}
+                  type="text" 
+                  placeholder="@twitter-handle" 
+                  value={twitter}
+                  onChange={handleTwitterChange}
                   disabled={isSubmitting}
                   className="bg-neutral-900 w-full text-neutral-200 px-6 py-4 rounded-[15px] flex items-center gap-2 font-black text-[12px] outline-none disabled:opacity-50 disabled:cursor-not-allowed"
                 />
                 <button 
-                  disabled={!isValidEmail || isSubmitting} 
+                  disabled={!twitter || isSubmitting} 
                   onClick={handleSubmit}
                   className={`${
-                    isValidEmail && !isSubmitting
+                    twitter && !isSubmitting
                       ? "bg-white cursor-pointer hover:bg-neutral-100" 
                       : "bg-neutral-600 cursor-not-allowed"
                   } text-black px-6 py-4 whitespace-nowrap rounded-[15px] flex items-center gap-2 font-bold text-[12px] disabled:opacity-50`}
