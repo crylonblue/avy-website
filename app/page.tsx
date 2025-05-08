@@ -56,7 +56,7 @@ export default function Home() {
             Start trading instantly. No KYC. No email. No barriers. Powered by Hyperliquid technology. Operated independently.
           </p>
           <p className="text-muted-foreground mb-8 max-w-[500px]">
-            Be one of the first 100 traders ever to touch Avy. We’ll never forget our earliest degens. (We'll never ask for your email)
+            Be one of the first 100 traders ever to touch Avy. We’ll never forget our earliest degens. (We&apos;ll never ask for your email)
           </p>
           <div className="max-w-[500px]">
             {!isSubmitted ? (
@@ -111,7 +111,7 @@ export default function Home() {
                 </svg>
               </a>
               <a
-                href="https://t.me/"
+                href="https://t.me/+LbmiY5JUKsszOGQy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-neutral-400 hover:text-white"

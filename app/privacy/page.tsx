@@ -34,14 +34,14 @@ export default function PrivacyPage() {
                 We collect the following information when you join our waitlist:
               </p>
               <ul className="list-disc pl-6 mt-2 space-y-2">
-                <li>Email address</li>
+                <li>x user name</li>
               </ul>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-white mb-4">How We Use Your Information</h2>
               <p>
-                We use your email address to:
+                We use your x user name to:
               </p>
               <ul className="list-disc pl-6 mt-2 space-y-2">
                 <li>Notify you when our app becomes available</li>
