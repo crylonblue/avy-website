@@ -100,7 +100,7 @@ export default function Home() {
             <div className="border-neutral-800 border mt-8 mb-8"></div>
             <div className="flex space-x-6">
               <a
-                href="https://x.com/avytrade"
+                href="https://x.com/avydotxyz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-neutral-400 hover:text-white"
