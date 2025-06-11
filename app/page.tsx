@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 relative">
       <Header />
-      <main className="w-full max-w-[950px] mx-auto px-4 flex-col-reverse flex md:flex-row gap-8 items-center mb-24 md:mb-0">
+      <main className="w-full max-w-[950px] mx-auto px-4 flex-col-reverse flex md:flex-row gap-8 items-center mb-24 md:mb-0 mt-24 md: mt-0">
         <div className="flex-1 flex flex-col">
           <h1 className="text-4xl font-bold mb-8 bg-gradient-to-b from-white to-neutral-400 bg-clip-text text-transparent leading-tight">
             Decentralized perps iOS Native
