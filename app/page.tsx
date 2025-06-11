@@ -17,11 +17,11 @@ export default function Home() {
           <div className="max-w-[500px]">
             <div className="mb-12 flex gap-4 mt-2">
               <a href="/join">
-                <button className="bg-[#D93333] px-8 py-3.5 rounded-full text-white font-medium cursor-pointer">Join early access</button>
+                <button className="text-xs md:text-base px-5 py-3 md:px-8 md:py-3.5 bg-[#D93333] rounded-full text-white font-medium cursor-pointer">Join early access</button>
               </a>
               
               <a href="https://blog.avy.xyz/posts/avy" target="_blank" rel="noopener noreferrer">
-                <button className="bg-black border border-neutral-700 px-8 py-3.5 rounded-full text-white font-medium cursor-pointer">View manifesto</button>
+                <button className="text-xs md:text-base px-5 py-3 md:px-8 md:py-3.5 bg-black border  border-neutral-700  rounded-full text-white font-medium cursor-pointer">View manifesto</button>
               </a>
             </div>
             <div className="flex space-x-6">

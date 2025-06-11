@@ -151,7 +151,7 @@ export default function JoinPage() {
           <button
             onClick={() => (isConnected ? disconnect() : handleConnect())}
             disabled={isChecking}
-            className="border border-neutral-700 px-8 py-3.5 rounded-full text-white font-medium cursor-pointer transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="text-xs md:text-base px-5 py-3 md:px-8 md:py-3.5 border border-neutral-700 rounded-full text-white font-medium cursor-pointer transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isConnected ? <Power /> : "Connect Wallet"}
           </button>
@@ -159,7 +159,7 @@ export default function JoinPage() {
             <button
               onClick={handleApply}
               disabled={isSubmitting || !twitterHandle}
-              className="bg-[#D93333] px-8 py-3.5 rounded-full text-white font-medium cursor-pointer hover:bg-[#c42d2d] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="text-xs md:text-base px-5 py-3 md:px-8 md:py-3.5 bg-[#D93333] rounded-full text-white font-medium cursor-pointer hover:bg-[#c42d2d] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? "Submitting..." : "Apply for Early Access"}
             </button>
