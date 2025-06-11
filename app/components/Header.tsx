@@ -10,7 +10,7 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { label: "Join early access", href: "/join" },
-  { label: "Blog", href: "#about" },
+  { label: "Blog", href: "https://blog.avy.xyz", isExternal: true },
 ];
 
 const Header = () => {
