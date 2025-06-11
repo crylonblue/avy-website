@@ -1,20 +1,10 @@
 "use client";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-8 relative">
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/bg.png"
-          alt="Background"
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
       <main className="w-full max-w-[950px] mx-auto px-4">
         <Link 
           href="/"

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { WagmiProvider } from "./providers/WagmiProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -41,7 +42,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased bg-black`}>{children}</body>
+      <body className={`${inter.className} antialiased bg-black`}>
+        <WagmiProvider>{children}</WagmiProvider>
+      </body>
     </html>
   );
 }

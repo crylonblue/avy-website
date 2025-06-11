@@ -1,103 +1,29 @@
 "use client";
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
-import { useState } from "react";
-import { supabase } from "@/lib/supabase";
+
+import Header from "./components/Header";
 
 export default function Home() {
-  const [twitter, setTwitter] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  const handleTwitterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newTwitter = e.target.value;
-    setTwitter(newTwitter);
-    setError(null);
-  };
-
-  const handleSubmit = async () => {
-    setIsSubmitting(true);
-    setError(null);
-
-    try {
-      const { error } = await supabase
-        .from('waitlist')
-        .insert([{ twitter }]);
-
-      if (error) throw error;
-      
-      setIsSubmitted(true);
-    } catch (error) {
-      console.error('Error submitting twitter handle:', error);
-      setError('Failed to submit twitter handle. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 relative">
-      <div className="h-[80px] w-full bg-[url('/logo.png')] bg-contain bg-center bg-no-repeat mb-12 block md:hidden"></div>
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/bg.png"
-          alt="Background"
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
+      <Header />
       <main className="w-full max-w-[950px] mx-auto px-4 flex-col-reverse flex md:flex-row gap-8 items-center mb-24 md:mb-0">
         <div className="flex-1 flex flex-col">
-          <div className="h-[100px] w-full bg-[url('/logo.png')] bg-contain bg-[left_top] bg-no-repeat mb-12 hidden md:block"></div>
-          <h1 className="text-4xl font-bold text-white mb-8 mt-8 md:mt-0">Scan. Tap. Trade. iOS-Native.</h1>
+          <h1 className="text-4xl font-bold mb-8 bg-gradient-to-b from-white to-neutral-400 bg-clip-text text-transparent leading-tight">
+            Decentralized perps iOS Native
+          </h1>
           <p className="text-muted-foreground mb-8 max-w-[500px]">
-            Start trading instantly. No KYC. No email. No barriers. Powered by Hyperliquid technology. Operated independently.
-          </p>
-          <p className="text-muted-foreground mb-8 max-w-[500px]">
-            Be one of the first 100 traders ever to touch Avy. We’ll never forget our earliest degens. (We&apos;ll never ask for your email)
+            Avy is a swipe-to-trade app for perps — built for everyone, powered by Hyperliquid, and optimized for the mobile-native generation.
           </p>
           <div className="max-w-[500px]">
-            {!isSubmitted ? (
-              <div className="flex gap-4">
-                <input 
-                  type="text" 
-                  placeholder="@twitter-handle" 
-                  value={twitter}
-                  onChange={handleTwitterChange}
-                  disabled={isSubmitting}
-                  className="bg-neutral-900 w-full text-neutral-200 px-6 py-4 rounded-[15px] flex items-center gap-2 font-black text-[12px] outline-none disabled:opacity-50 disabled:cursor-not-allowed"
-                />
-                <button 
-                  disabled={!twitter || isSubmitting} 
-                  onClick={handleSubmit}
-                  className={`${
-                    twitter && !isSubmitting
-                      ? "bg-white cursor-pointer hover:bg-neutral-100" 
-                      : "bg-neutral-600 cursor-not-allowed"
-                  } text-black px-6 py-4 whitespace-nowrap rounded-[15px] flex items-center gap-2 font-bold text-[12px] disabled:opacity-50`}
-                >
-                  {isSubmitting ? (
-                    "Submitting..."
-                  ) : (
-                    <>
-                      Join waitlist <ArrowRight className="w-4 h-4" />
-                    </>
-                  )}
-                </button>
-              </div>
-            ) : (
-              <div className="bg-green-500/10 text-green-500 px-6 py-4 rounded-[15px] w-full text-center mt-4">
-                Thank you! We&apos;ll be in touch soon.
-              </div>
-            )}
-            {error && (
-              <div className="bg-red-500/10 text-red-500 text-sm mt-4 px-6 py-4 rounded-[15px] w-full text-center">
-                {error}
-              </div>
-            )}
-            <div className="border-neutral-800 border mt-8 mb-8"></div>
+            <div className="mb-12 flex gap-4 mt-2">
+              <a href="/join">
+                <button className="bg-[#D93333] px-8 py-3.5 rounded-full text-white font-medium cursor-pointer">Join early access</button>
+              </a>
+              
+              <a href="https://blog.avy.xyz/posts/avy" target="_blank" rel="noopener noreferrer">
+                <button className="bg-black border border-neutral-700 px-8 py-3.5 rounded-full text-white font-medium cursor-pointer">View manifesto</button>
+              </a>
+            </div>
             <div className="flex space-x-6">
               <a
                 href="https://x.com/avydotxyz"
@@ -136,8 +62,8 @@ export default function Home() {
                 className="inset-0 w-full h-full object-cover"
                 poster="/poster.jpg"
               >
-                <source src="/screen.webm" type="video/webm" />
-                <source src="/screen.mp4" type="video/mp4" />
+                <source src="/avy.webm" type="video/webm" />
+                <source src="/avy.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -153,7 +79,6 @@ export default function Home() {
             Privacy Policy
           </a>
         </div>
-        
       </footer>
     </div>
   );
