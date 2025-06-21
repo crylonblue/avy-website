@@ -71,9 +71,9 @@ export default function PrivacyPage() {
                   </a>
                 </p>
                 <p className="text-neutral-300">
-                  MJ Tech Ventures UG (haftungsbeschränkt)<br />
-                  Schwarzbuchenweg 63<br />
-                  Hamburg 22391<br />
+                  Till Kemper<br />
+                  Blütenstraße 19a<br />
+                  München 80799<br />
                   Germany
                 </p>
               </div>
