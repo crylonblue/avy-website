@@ -87,7 +87,7 @@ export default function PrivacyPage() {
             </section>
 
             <p className="text-sm text-neutral-400 mt-8">
-              Last updated: 5/4/2025
+              Last updated: 6/19/2025
             </p>
           </div>
         </div>
